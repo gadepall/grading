@@ -12,10 +12,6 @@ y = np.zeros((N,1))                     #column of Assigned clusters
 X = np.hstack((x,y))                    #stacking data and cluster
 k = 8                                   #No.of Clusters(Grades)
 
-df2 = data.loc[:,"Grade"]               #Fixed grades
-fixed = np.array(df2)
-fixed = fixed.reshape(fixed.size,1)     #Converting to column
-
 k_points = np.linspace(0,1,k)*np.max(x) 
 #Initializing Clusters means spaced equally in (0,x_max)
 k_points = np.sort(k_points)
@@ -61,27 +57,22 @@ for iter in range(iterations):
 grades = []                #Attach grades to the data points 
 
 for i in range(N):
-    try :
-        boolean = isnan(fixed[i])
-    except : 
-        grades.append(fixed[i][0])
-    else :
-        if X[i][1] == 1:
-            grades.append('F')
-        if X[i][1] == 2:
-            grades.append('D')
-        if X[i][1] == 3:
-            grades.append('C-')
-        if X[i][1] == 4:
-            grades.append('C')
-        if X[i][1] == 5:
-            grades.append('B-')
-        if X[i][1] == 6:
-            grades.append('B')
-        if X[i][1] == 7:
-            grades.append('A-')   
-        if X[i][1] == 8:
-            grades.append('A')
+    if X[i][1] == 1:
+        grades.append('F')
+    if X[i][1] == 2:
+        grades.append('D')
+    if X[i][1] == 3:
+        grades.append('C-')
+    if X[i][1] == 4:
+        grades.append('C')
+    if X[i][1] == 5:
+        grades.append('B-')
+    if X[i][1] == 6:
+        grades.append('B')
+    if X[i][1] == 7:
+        grades.append('A-')   
+    if X[i][1] == 8:
+        grades.append('A')
 data['Grade'] = grades
 data.to_excel('grades_kmeans.xlsx',index = False)  #writing to file
 fig = data['Grade'].value_counts().sort_index(ascending=False).plot.bar().get_figure()

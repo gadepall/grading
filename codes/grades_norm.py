@@ -16,7 +16,6 @@ N = x.size                              #Size of Data
 #X = np.hstack((x,y))                    #stacking data and cluster
 #k = 8                                   #No.of Clusters(Grades)
 #
-df2 = data.loc[:,"Grade"]
 grades = []
 s = ""
 #Attach grades

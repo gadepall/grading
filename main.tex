@@ -265,7 +265,7 @@ Differentiating with respect to $\vec{\mu}_k$ and setting the derivative to
 zero, we get
 \begin{align}
     \sum_{n=1}^N2\vec{\mu}_kr_{nk}\brak{\vec{x}_n-\vec{\mu}_k} = 0 \\
-    \implies \vec{{\mu_k}} = \frac{\sum_{n=1}^Nr_{nk}\vec{x}_n}{\sum_{n=1}^Nr_{nk}} = \frac{\vec{Xr}_k}{\vec{1}^\top\vec{r}_k}
+    \implies \vec{\mu_k} = \frac{\sum_{n=1}^Nr_{nk}\vec{x}_n}{\sum_{n=1}^Nr_{nk}} = \frac{\vec{Xr}_k}{\vec{1}^\top\vec{r}_k}
     \label{eq:M-step}
 \end{align}
 where
@@ -282,7 +282,7 @@ Thus, the $K$-means algorithm is an \emph{expectation maximization} (EM)
 algorithm where each iteration consists of two steps until convergence.
 \begin{enumerate}
     \item \emph{Expectation Step} (E Step): For $1 \le k \le K$, calculate the
-    expected means as below.
+    expected means using \eqref{eq:E-step}.
     \begin{equation}
         \tilde{\vec{\mu}_k} \triangleq \frac{\sum_{n=1}^Nr_{nk}\vec{X}_n}{\sum_{n=1}^Nr_{nk}}
         \label{eq:E-step}
