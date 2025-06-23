@@ -140,7 +140,7 @@ evaluation methods.
 In this paper, we explore the utility of unsupervised machine learning (ML)
 methods for fair grading of students in a course where students performances are
 skewed. We test the utility of the $K$-means clustering algorithm in assigning
-letter grades as compared to grading using the Z score. We use the scores of 94
+letter grades as compared to grading using the Z score. We use the scores of 114
 students who have taken a course in our institute. The main contributions of
 this paper are as follows.
 
@@ -294,6 +294,40 @@ algorithm where each iteration consists of two steps until convergence.
 \section{Implementation}
 \label{sec:implementation}
 
+A sample of ten rows of the dataset used for grading is shown in
+\autoref{tab:sample-data}. The dataset contains the scores of 114 students who
+have taken a course in our institute, where the maximum score is 100.
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{S.No.} & \textbf{Marks} \\
+        \hline
+        1 & 46.8 \\
+        \hline
+        2 & 76 \\
+        \hline
+        3 & 11 \\
+        \hline
+        4 & 53 \\
+        \hline
+        5 & 31.5 \\
+        \hline
+        6 & 34.5 \\
+        \hline
+        7 & 55 \\
+        \hline
+        8 & 51.6 \\
+        \hline
+        9 & 23.2 \\
+        \hline
+        10 & 0 \\
+        \hline
+    \end{tabular}
+    \caption{Sample of the dataset used for grading.}
+    \label{tab:sample-data}
+\end{table}
+
 We implemented the Z score algorithm as well as the EM algorithm for the
 $K$-means clustering algorithm in Python using the \texttt{numpy} and
 \texttt{pandas} libraries. The raw data is collected in the \texttt{marks.xlsx}
@@ -309,7 +343,9 @@ assign grades and outputs the results to \texttt{grades\_kmeans.xlsx}.
 \section{Results}
 \label{sec:results}
 The grade distribution using each method is shown in \autoref {fig:gauss-dist}
-and \autoref{fig:kmeans-dist}.
+and \autoref{fig:kmeans-dist}. In particular, the grades assigned for the sample
+data presented in \autoref{tab:sample-data} is shown in
+\autoref{tab:grade-assignment}.
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=\columnwidth]{figs/grades_gauss.png}
@@ -322,6 +358,37 @@ and \autoref{fig:kmeans-dist}.
     \caption{Grade distribution using the $K$-means algorithm.}
     \label{fig:kmeans-dist}
 \end{figure}
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{S.No.} & \textbf{Marks} & \textbf{Grade (Z Score)} & \textbf{Grade (K Means)} \\
+        \hline
+        1 & 46.8 & B & B- \\
+        \hline
+        2 & 76 & A & A- \\
+        \hline
+        3 & 11 & C & D \\
+        \hline
+        4 & 53 & B & B- \\
+        \hline
+        5 & 31.5 & B- & C- \\
+        \hline
+        6 & 34.5 & B- & C- \\
+        \hline
+        7 & 55 & B & B \\
+        \hline
+        8 & 51.6 & B & B- \\
+        \hline
+        9 & 23.2 & B- & D \\
+        \hline
+        10 & 0 & D & F \\
+        \hline
+    \end{tabular}
+    \caption{Grade assignment for a sample of students using both methods.}
+    \label{tab:grade-assignment}
+\end{table}
+
 Based on the results, we can make the following observations:
 \begin{enumerate}
     \item Using the Gaussian distribution is quite unfair, since there could be

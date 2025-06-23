@@ -73,9 +73,9 @@ for i in range(N):
         grades.append('A-')   
     if X[i][1] == 8:
         grades.append('A')
-data['Grade'] = grades
+data['Grades'] = grades
 data.to_excel('grades_kmeans.xlsx',index = False)  #writing to file
-fig = data['Grade'].value_counts().sort_index(ascending=False).plot.bar().get_figure()
+fig = data['Grades'].value_counts().sort_index(ascending=False).plot.bar().get_figure()
 ax = fig.gca()
 ax.set_xlabel('Grade')
 ax.set_ylabel('Number of Students')
