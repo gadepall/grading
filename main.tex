@@ -113,11 +113,7 @@ columns=fullflexible
 \maketitle
 
 \begin{abstract}
-	In this paper, we show that unsupervised learning is a superior alternative for student grading when compared to classsical .  demonstrate an application of 
-    This document is a report which compares the grade distribution obtained by
-    using a method based on machine learning as compared to fitting a normal 
-    curve to the scores of the students.
-\end{abstract}
+	In this paper, we show that unsupervised learning is a superior alternative for student grading when compared to classsical Gaussian curve based methods.  This is done by applying the K-means clustering algorithm to the marks obtained by students for a particular course and qualitatively comparing it with the Gaussian approach.  \end{abstract}
 
 \section{Introduction}
 \label{sec:intro}
@@ -198,8 +194,8 @@ in many studies is the $K$-means clustering algorithm
 \cite{macqueenMethodsClassificationAnalysis1967}. The authors of
 \cite{bucosStudentClusterAnalysis2020} were able to use the $K$-means algorithm
 to identify students at risk of failing to complete coursework by collecting
-data pertaining to a single course offered over many years. The authors of
-\cite{wangAlgorithmStudentGrade2022} used the $K$-means algorithm to promptly
+data pertaining to a single course offered over many years. In
+\cite{wangAlgorithmStudentGrade2022}, the $K$-means algorithm was used to promptly
 identify and guide students at the edge of the grading classification. Variants
 of the original $K$-means algorithm have also been used for grading students.
 The $K$-means++ algorithm was used by the authors of
