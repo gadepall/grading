@@ -236,8 +236,9 @@ The letter grades are assigned as per \autoref{tab:grade-scheme}.
 \end{table}
 
 \subsection{K-Means Clustering}
-$K$-Means clustering is an unsupervised classification model, which attempts to
-cluster unlabeled data in order to gain more structure from it. 
+$K$-Means clustering \cite{macqueenMethodsClassificationAnalysis1967} is an
+unsupervised classification model, which attempts to cluster unlabeled data in
+order to gain more structure from it. 
 
 To find the optimum means for a fixed number of letter grades as per
 \autoref{tab:grade-scheme}, we frame the problem of assigning letter grades as
@@ -329,7 +330,7 @@ We implemented the Z score algorithm as well as the EM algorithm for the
 $K$-means clustering algorithm in Python using the \texttt{numpy} and
 \texttt{pandas} libraries. The raw data is collected in the \texttt{marks.xlsx}
 file. The source codes and dataset are openly available on
-\href{https://github.com/gadepall/grading/tree/main/codes}{GitHub}.
+\href{https://github.com/gadepall/grading}{GitHub}.
 
 The Python code \texttt{codes/grades\_norm.py} takes the given input population
 dataset \texttt{marks.xlsx} and assigns grades appropriately. The grades are
